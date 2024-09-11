@@ -1,50 +1,81 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Segitiga</title>
+    <title>Kalkulator Nadhif</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
-        <!-- Source Code by Nadhif Rif'at Rasendriya -->
         <h1>Kalkulator Nadhif</h1>
-        <h5>Hallo semua! Selamat datang di <br> Kalkulator Luas dan Keliling Segitiga</h5>
-        
-        <div class="calculator">
+        <h4>Hallo semua! Selamat datang di <br>Kalkulator Luas dan Keliling</h4>
+
+        <!-- Source Code by Nadhif Rif'at Rasendriya -->
+        <div class="tab-menu">
+            <button class="tab-button active" onclick="switchTab('segitiga')">Segitiga</button>
+            <button class="tab-button" onclick="switchTab('jajarGenjang')">Jajar Genjang</button>
+        </div>
+
+        <!-- Segitiga -->
+        <div class="calculator tab-content" id="segitiga">
             <h2>Hitung Luas Segitiga</h2>
             <form id="luasForm">
                 <label for="alas">Alas:</label>
-                <input type="number" id="alas" placeholder="Nilai alas" required>
+                <input type="number" id="alas" name="alas" placeholder="Nilai alas" required>
                 
                 <label for="tinggi">Tinggi:</label>
-                <input type="number" id="tinggi" placeholder="Nilai tinggi" required>
+                <input type="number" id="tinggi" name="tinggi" placeholder="Nilai tinggi" required>
                 
                 <button type="submit">Hitung Luas</button>
-                <button type="reset" onclick="resetForm()">Reset</button>
+                <button type="button" onclick="resetForm('luasForm')">Reset</button>
                 <p id="luasResult"></p>
                 <small id="calculationSteps"></small>
             </form>
-        </div>
-
-        <div class="calculator">
+        
             <h2>Hitung Keliling Segitiga</h2>
-            <form id="kelilingForm">
+            <form id="kelilingSegitigaForm">
                 <label for="sisiA">Sisi A:</label>
-
-                <input type="number" id="sisiA" placeholder="Nilai sisi A" required>
-                
+                <input type="number" id="sisiA" name="sisiA" placeholder="Nilai sisi A" required>
+        
                 <label for="sisiB">Sisi B:</label>
-                <input type="number" id="sisiB" placeholder="Nilai sisi B" required>
-                
+                <input type="number" id="sisiB" name="sisiB" placeholder="Nilai sisi B" required>
+        
                 <label for="sisiC">Sisi C:</label>
-                <input type="number" id="sisiC" placeholder="Nilai sisi C" required>
+                <input type="number" id="sisiC" name="sisiC" placeholder="Nilai sisi C" required>
                 
                 <button type="submit">Hitung Keliling</button>
-                <button type="reset" onclick="resetForm()">Reset</button>
-                <p id="kelilingResult"></p>
+                <button type="button" onclick="resetForm('kelilingSegitigaForm')">Reset</button>
+                <p id="kelilingSegitigaResult"></p>
+            </form>
+        </div>
+
+        <!-- Jajar Genjang -->
+        <div class="calculator tab-content" id="jajarGenjang" style="display: none;">
+            <h2>Hitung Luas Jajar Genjang</h2>
+            <form id="luasJajarGenjangForm">
+                <label for="alasJG">Alas:</label>
+                <input type="number" id="alasJG" name="alasJG" placeholder="Nilai alas" required>
+                
+                <label for="tinggiJG">Tinggi:</label>
+                <input type="number" id="tinggiJG" name="tinggiJG" placeholder="Nilai tinggi" required>
+                
+                <button type="submit">Hitung Luas</button>
+                <button type="button" onclick="resetForm('luasJajarGenjangForm')">Reset</button>
+                <p id="luasJajarGenjangResult"></p>
+            </form>
+
+            <h2>Hitung Keliling Jajar Genjang</h2>
+            <form id="kelilingJajarGenjangForm">
+                <label for="sisiAJG">Sisi A:</label>
+                <input type="number" id="sisiAJG" name="sisiAJG" placeholder="Nilai sisi A" required>
+                
+                <label for="sisiBJG">Sisi B:</label>
+                <input type="number" id="sisiBJG" name="sisiBJG" placeholder="Nilai sisi B" required>
+                
+                <button type="submit">Hitung Keliling</button>
+                <button type="button" onclick="resetForm('kelilingJajarGenjangForm')">Reset</button>
+                <p id="kelilingJajarGenjangResult"></p>
             </form>
         </div>
     </div>
