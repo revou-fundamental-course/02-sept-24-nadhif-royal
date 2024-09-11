@@ -1,1 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(https://www.dmu.ac.uk/webimages/study-images/courses/technology/postgraduate/cyber-security.jpg?format=webp);
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    
+    background-color: rgb(0, 217, 255);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+.calculator {
+    margin-top: 20px;
+}
+
+input[type="number"] {
+    width: 90%;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 50%;
+    margin-top: 10px;
+}
+button[type="submit"], button[type="reset"] {
+    width: 48%; 
+    display: inline-block; 
+}
+
+button[type="reset"] {
+    background-color: rgb(255, 145, 0); 
+    color: black; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 5px;
+    cursor: pointer;
+    float: right; 
+}
+  
+  button[type="reset"]:hover {
+    background-color: #ffd700; 
+  }
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    margin-top: 25px;
+    font-weight: bold;
+}
 
