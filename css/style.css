@@ -1,6 +1,8 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url(https://www.dmu.ac.uk/webimages/study-images/courses/technology/postgraduate/cyber-security.jpg?format=webp);
+    background-image: url('https://www.dmu.ac.uk/webimages/study-images/courses/technology/postgraduate/cyber-security.jpg?format=webp');
+    background-size: cover;
+    background-position: center;
     background-color: #f4f4f4;
     display: flex;
     justify-content: center;
@@ -10,12 +12,12 @@ body {
 }
 
 .container {
-    
-    background-color: rgb(0, 217, 255);
+    background-color: rgba(0, 217, 255, 0.9);
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     width: 400px;
+    max-width: 90%;
     text-align: center;
 }
 
@@ -25,44 +27,109 @@ body {
 
 input[type="number"] {
     width: 90%;
-    padding: 8px;
-    margin: 5px 0;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 button {
     background-color: #007bff;
-    color: white;
+    color: rgb(0, 0, 0);
     border: none;
     padding: 10px;
     cursor: pointer;
     width: 50%;
     margin-top: 10px;
-}
-button[type="submit"], button[type="reset"] {
-    width: 48%; 
-    display: inline-block; 
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-button[type="reset"] {
-    background-color: rgb(255, 145, 0); 
-    color: black; 
-    border: none; 
-    padding: 10px 20px; 
-    border-radius: 5px;
-    cursor: pointer;
-    float: right; 
+button[type="submit"] {
+    width: 48%;
+    margin-right: 2%;
 }
-  
-  button[type="reset"]:hover {
-    background-color: #ffd700; 
-  }
+
+button[type="button"] {
+    width: 48%;
+    background-color: rgb(255, 145, 0);
+    color: black;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button[type="button"]:hover {
+    background-color: #ffd700;
+}
 
 button:hover {
     background-color: #0056b3;
 }
 
 p {
-    margin-top: 25px;
+    margin-top: 20px;
     font-weight: bold;
+    color: #333;
 }
 
+.tab-menu {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background-color: #00eeff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.tab-button:hover {
+    background-color: #ff0000;
+    color: white;
+}
+
+.tab-button.active {
+    background-color: #002fff;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    transition: opacity 0.5s ease;
+}
+
+.tab-content.active {
+    display: block;
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    button[type="submit"], button[type="button"] {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .tab-menu {
+        flex-direction: column;
+    }
+
+    .tab-button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
